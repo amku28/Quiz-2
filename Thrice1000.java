@@ -5,7 +5,7 @@ public class Thrice1000 {
         double avg = 0;
 
         for (int turn = 1; turn <= 1000; turn ++) {
-
+            // round 1
             double count = 1;
             int dice1 = (int) (Math.random()*6 + 1);
             int dice2 = (int) (Math.random()*6 + 1);
@@ -27,6 +27,7 @@ public class Thrice1000 {
                 }
             }
 
+            // round 2
             int tripletWorth = dice1;
             for (count = 1; count <= tripletWorth; count++) {
                 dice1 = (int) (Math.random()*6 + 1); 
@@ -36,6 +37,7 @@ public class Thrice1000 {
                 tally = tally + value;
             }
 
+            // round 3
             count = 0;
             while ((dice1 != dice2 && dice2 != dice3)) {
                 dice1 = (int) (Math.random()*6 + 1); 
