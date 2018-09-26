@@ -9,24 +9,20 @@ public class CaesarCipher {
 
         System.out.println("Enter code word: ");
         String codeWord = scan.next();
+    
+        for (int letter = 0, codeLetter = 0; letter != msg.length(); letter++, codeLetter++) {
+            // the for loop initilizes 2 counters, one for the message and the other for the code word
+            if (codeLetter == codeWord.length()) {
+                // the codeword is repeated letter by letter trailing the msg
+                codeLetter = 0;
+            }
+            int shift = (int) codeWord.charAt(codeLetter) - 96;
+            // figures out how much to shift by in the alphabet from values 1-26
 
-        //hello
-        //ab
-        //igmnp
+            int newLetter= (int) msg.charAt(letter) + shift;
+            // figures out new letter for the msg corresponding to the shift amount
 
-        // for (int letter = 0; letter != codeWord.length(); letter++) {
-            int shift = (int) codeWord.charAt(0) - 96;
-
-            System.out.println(shift);
-
-            System.out.println((char) 105);
-        // }
-
-        // if (newLetter > 26) {
-        //     newLetter =  + shift;
-        // }
-        // System.out.println(shift);
-        // System.out.print((char) newLetter);
-        
+            System.out.print((char) newLetter);
+        }
     }
 }
